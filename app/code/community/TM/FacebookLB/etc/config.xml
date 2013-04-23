@@ -85,14 +85,30 @@
         <facebooklb>
             <general>
                 <enabled>0</enabled>
+                <appid></appid>
+                <appsecret></appsecret>
+                <lang>en_US</lang>
+            </general>
+            <category_products>
+                <enabled>0</enabled>
+                <send>0</send>
                 <layout>button_count</layout>
-                <showfaces>false</showfaces>
-                <width>450</width>
-                <height>30</height>
+                <showfaces>0</showfaces>
+                <width>400</width>
                 <verb>like</verb>
                 <font></font>
                 <color>light</color>
-            </general>
+            </category_products>
+            <productlike>
+                <enabled>0</enabled>
+                <send>1</send>
+                <layout>button_count</layout>
+                <showfaces>0</showfaces>
+                <width>350</width>
+                <verb>like</verb>
+                <font></font>
+                <color>light</color>
+            </productlike>
         </facebooklb>
     </default>
 </config>
