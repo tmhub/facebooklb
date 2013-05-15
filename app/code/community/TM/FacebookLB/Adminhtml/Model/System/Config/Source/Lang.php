@@ -5,8 +5,19 @@ class TM_FacebookLB_Adminhtml_Model_System_Config_Source_Lang
     public function toOptionArray()
     {
         $path = 'http://facebook.com/translations/FacebookLocales.xml';
-        $xml = new Varien_Simplexml_Element($path, 0, true);
-        $xmlData = $xml->children();
+
+        try {
+            $xml = new Varien_Simplexml_Element($path, 0, true);
+            $xmlData = $xml->children();
+        } catch (Exception $e) {
+            // no internet connection is available
+            return array(
+                array(
+                    'value' => 'en_US',
+                    'label' => 'English'
+                )
+            );
+        }
 
         $locales = $xmlData;
         $result = array();
