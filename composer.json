@@ -27,11 +27,13 @@
             ["app/design/frontend/default/default/layout/FacebookLB.xml","app/design/frontend/default/default/layout/FacebookLB.xml"],
             ["app/design/frontend/default/default/template/facebooklb","app/design/frontend/default/default/template/facebooklb"],
             ["app/etc/modules/TM_FaceBookLB.xml","app/etc/modules/TM_FaceBookLB.xml"],
-            ["app/locale/en_US/TM_FacebookLB.csv","app/locale/en_US/TM_FacebookLB.csv"]
+            ["app/locale/en_US/TM_FacebookLB.csv","app/locale/en_US/TM_FacebookLB.csv"],
+            ["app/locale/es_ES/TM_FacebookLB.csv","app/locale/es_ES/TM_FacebookLB.csv"],
+            ["app/locale/fr_FR/TM_FacebookLB.csv","app/locale/fr_FR/TM_FacebookLB.csv"],
+            ["app/locale/it_IT/TM_FacebookLB.csv","app/locale/it_IT/TM_FacebookLB.csv"],
+            ["app/locale/nl_NL/TM_FacebookLB.csv","app/locale/nl_NL/TM_FacebookLB.csv"],
+            ["app/locale/pt_PT/TM_FacebookLB.csv","app/locale/pt_PT/TM_FacebookLB.csv"]
         ],
-        "magento-root-dir":".",
-        "magento-deploystrategy": "copy",
-        "magento-force": true,
         "changelog": ""
     }
 }
