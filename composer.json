@@ -4,7 +4,7 @@
     "homepage": "https://github.com/tmhub/facebooklb",
     "license": "OSL-3.0",
     "description": "Facebook Like Button integration",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "authors": [
         {
             "name": "Templates-Master Team",
@@ -24,8 +24,8 @@
     "extra": {
         "map": [
             ["app/code/community/TM/FacebookLB","app/code/community/TM/FacebookLB"],
-            ["app/design/frontend/default/default/layout/FacebookLB.xml","app/design/frontend/default/default/layout/FacebookLB.xml"],
-            ["app/design/frontend/default/default/template/facebooklb","app/design/frontend/default/default/template/facebooklb"],
+            ["app/design/frontend/base/default/layout/FacebookLB.xml","app/design/frontend/base/default/layout/FacebookLB.xml"],
+            ["app/design/frontend/base/default/template/facebooklb","app/design/frontend/base/default/template/facebooklb"],
             ["app/etc/modules/TM_FaceBookLB.xml","app/etc/modules/TM_FaceBookLB.xml"],
             ["app/locale/en_US/TM_FacebookLB.csv","app/locale/en_US/TM_FacebookLB.csv"],
             ["app/locale/es_ES/TM_FacebookLB.csv","app/locale/es_ES/TM_FacebookLB.csv"],

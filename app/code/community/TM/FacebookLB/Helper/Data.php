@@ -19,21 +19,17 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
             $layout = Mage::getStoreConfig('facebooklb/category_products/layout');
             $color = Mage::getStoreConfig('facebooklb/category_products/color');
             $font = Mage::getStoreConfig('facebooklb/category_products/font');
-
             $result .= '
-                <div>
-                    <fb:like
-                        href="' . $productUrl . '"
-                        send="' . $send . '"
-                        show_faces="' . $showFaces .'"
-                        layout="'. $layout .'"
-                        colorscheme="'. $color .'"
-                        font="'. $font .'"
-                    </fb:like>
+                <div
+                    class           ="fb-like"
+                    data-href       ="' . $productUrl . '"
+                    data-layout     ="' . $layout . '"
+                    data-action     ="' . $action . '"
+                    data-show-faces ="' . $showFaces .'"
+                    data-share      ="' . $send . '"
                 </div>
             ';
         }
-
         return $result;
     }
 }
