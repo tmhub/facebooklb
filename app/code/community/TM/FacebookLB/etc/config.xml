@@ -82,6 +82,11 @@
     </global>
 
     <default>
+        <subscriptionchecker>
+            <ignored_sections>
+                <facebooklb/>
+            </ignored_sections>
+        </subscriptionchecker>
         <facebooklb>
             <general>
                 <enabled>0</enabled>
