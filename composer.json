@@ -26,7 +26,7 @@
             ["app/code/community/TM/FacebookLB","app/code/community/TM/FacebookLB"],
             ["app/design/frontend/base/default/layout/FacebookLB.xml","app/design/frontend/base/default/layout/FacebookLB.xml"],
             ["app/design/frontend/base/default/template/facebooklb","app/design/frontend/base/default/template/facebooklb"],
-            ["app/etc/modules/TM_FaceBookLB.xml","app/etc/modules/TM_FaceBookLB.xml"],
+            ["app/etc/modules/TM_FacebookLB.xml","app/etc/modules/TM_FacebookLB.xml"],
             ["app/locale/en_US/TM_FacebookLB.csv","app/locale/en_US/TM_FacebookLB.csv"],
             ["app/locale/es_ES/TM_FacebookLB.csv","app/locale/es_ES/TM_FacebookLB.csv"],
             ["app/locale/fr_FR/TM_FacebookLB.csv","app/locale/fr_FR/TM_FacebookLB.csv"],
