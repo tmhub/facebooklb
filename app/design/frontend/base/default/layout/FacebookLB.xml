@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.1.0">
+
+    <facebooklb_init_js>
+        <reference name="head">
+            <action method="addItem" ifconfig="facebooklb/general/enabled">
+                <type>skin_js</type>
+                <name>tm/facebooklb/js/init.js</name>
+                <params>defer</params>
+            </action>
+        </reference>
+    </facebooklb_init_js>
+
     <catalog_product_view>
+        <update handle="facebooklb_init_js"/>
         <reference name="head">
             <block type="core/template" name="facebooklb_product_page_meta">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
@@ -8,30 +20,21 @@
                 </action>
             </block>
         </reference>
-        <reference name="before_body_end">
-            <block type="core/template" name="facebooklb_button_script">
-                <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/button_script.phtml</template>
-                </action>
-            </block>
-        </reference>
     </catalog_product_view>
+
     <catalog_category_default>
+        <update handle="facebooklb_init_js"/>
         <reference name="before_body_end">
             <block type="core/template" name="facebook_category_products">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
                     <template>facebooklb/category_products_like.phtml</template>
                 </action>
             </block>
-            <block type="core/template" name="facebooklb_button_script">
-                <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/button_script.phtml</template>
-                </action>
-            </block>
         </reference>
     </catalog_category_default>
 
     <catalogsearch_result_index>
+        <update handle="facebooklb_init_js"/>
         <reference name="content">
             <block type="core/template" name="facebook_search_result_script">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
@@ -39,27 +42,17 @@
                 </action>
             </block>
         </reference>
-        <reference name="before_body_end">
-            <block type="core/template" name="facebooklb_category_button_script">
-                <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/button_script.phtml</template>
-                </action>
-            </block>
-        </reference>
     </catalogsearch_result_index>
 
     <catalog_category_layered>
+        <update handle="facebooklb_init_js"/>
         <reference name="before_body_end">
             <block type="core/template" name="facebookcategory">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
                     <template>facebooklb/category_products_like.phtml</template>
                 </action>
             </block>
-            <block type="core/template" name="facebooklb_search_button_script">
-                <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/button_script.phtml</template>
-                </action>
-            </block>
         </reference>
     </catalog_category_layered>
+
 </layout>
