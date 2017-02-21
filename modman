@@ -1,0 +1,11 @@
+app/code/community/TM/FacebookLB                          app/code/community/TM/FacebookLB
+app/design/frontend/base/default/layout/FacebookLB.xml    app/design/frontend/base/default/layout/FacebookLB.xml
+app/design/frontend/base/default/template/facebooklb      app/design/frontend/base/default/template/facebooklb
+app/etc/modules/TM_FacebookLB.xml                         app/etc/modules/TM_FacebookLB.xml
+app/locale/en_US/TM_FacebookLB.csv                        app/locale/en_US/TM_FacebookLB.csv
+app/locale/es_ES/TM_FacebookLB.csv                        app/locale/es_ES/TM_FacebookLB.csv
+app/locale/fr_FR/TM_FacebookLB.csv                        app/locale/fr_FR/TM_FacebookLB.csv
+app/locale/it_IT/TM_FacebookLB.csv                        app/locale/it_IT/TM_FacebookLB.csv
+app/locale/nl_NL/TM_FacebookLB.csv                        app/locale/nl_NL/TM_FacebookLB.csv
+app/locale/pt_PT/TM_FacebookLB.csv                        app/locale/pt_PT/TM_FacebookLB.csv
+skin/frontend/base/default/tm/facebooklb                  skin/frontend/base/default/tm/facebooklb

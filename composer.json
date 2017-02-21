@@ -4,36 +4,13 @@
     "homepage": "https://github.com/tmhub/facebooklb",
     "license": "OSL-3.0",
     "description": "Facebook Like Button integration",
-    "version": "2.0.2",
     "authors": [
         {
             "name": "Templates-Master Team",
             "email": "support@templates-master.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "tm/core": "*"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://tmhub.github.io/packages/"
-        }
-    ],
-    "extra": {
-        "map": [
-            ["app/code/community/TM/FacebookLB","app/code/community/TM/FacebookLB"],
-            ["app/design/frontend/base/default/layout/FacebookLB.xml","app/design/frontend/base/default/layout/FacebookLB.xml"],
-            ["app/design/frontend/base/default/template/facebooklb","app/design/frontend/base/default/template/facebooklb"],
-            ["app/etc/modules/TM_FacebookLB.xml","app/etc/modules/TM_FacebookLB.xml"],
-            ["app/locale/en_US/TM_FacebookLB.csv","app/locale/en_US/TM_FacebookLB.csv"],
-            ["app/locale/es_ES/TM_FacebookLB.csv","app/locale/es_ES/TM_FacebookLB.csv"],
-            ["app/locale/fr_FR/TM_FacebookLB.csv","app/locale/fr_FR/TM_FacebookLB.csv"],
-            ["app/locale/it_IT/TM_FacebookLB.csv","app/locale/it_IT/TM_FacebookLB.csv"],
-            ["app/locale/nl_NL/TM_FacebookLB.csv","app/locale/nl_NL/TM_FacebookLB.csv"],
-            ["app/locale/pt_PT/TM_FacebookLB.csv","app/locale/pt_PT/TM_FacebookLB.csv"]
-        ],
-        "changelog": ""
     }
 }
