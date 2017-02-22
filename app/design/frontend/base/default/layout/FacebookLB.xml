@@ -38,7 +38,7 @@
         <reference name="content">
             <block type="core/template" name="facebook_search_result_script">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/search_script.phtml</template>
+                    <template>facebooklb/category_products_like.phtml</template>
                 </action>
             </block>
         </reference>
