@@ -16,7 +16,18 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getCategoryLikeButton($product)
     {
-        return $this->renderLikeButton($product->getProductUrl(), 'category_products');
+        $oldUrl = $product->getData('url');
+        $oldRequestPath = $product->getData('request_path');
+        $product->setData('url', '');
+        $product->setData('request_path', '');
+
+        $params = array('_ignore_category' => true);
+        $url = $product->getUrlModel()->getUrl($product, $params);
+
+        $product->setData('url', $oldUrl);
+        $product->setData('request_path', $oldRequestPath);
+
+        return $this->renderLikeButton($url, 'category_products');
     }
 
     public function renderLikeButton($url, $configKey)
