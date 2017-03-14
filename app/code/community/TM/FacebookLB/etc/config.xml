@@ -10,7 +10,7 @@
         <layout>
             <updates>
                 <FacebookLB>
-                    <file>FacebookLB.xml</file>
+                    <file>tm/FacebookLB.xml</file>
                 </FacebookLB>
             </updates>
         </layout>

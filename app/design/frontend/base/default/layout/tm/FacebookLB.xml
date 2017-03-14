@@ -16,7 +16,7 @@
         <reference name="head">
             <block type="core/template" name="facebooklb_product_page_meta">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/head.phtml</template>
+                    <template>tm/facebooklb/head.phtml</template>
                 </action>
             </block>
         </reference>
@@ -25,9 +25,9 @@
     <catalog_category_default>
         <update handle="facebooklb_init_js"/>
         <reference name="before_body_end">
-            <block type="core/template" name="facebook_category_products">
+            <block type="core/template" name="facebooklb.category.default">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/category_products_like.phtml</template>
+                    <template>tm/facebooklb/category_products_like.phtml</template>
                 </action>
             </block>
         </reference>
@@ -36,9 +36,9 @@
     <catalogsearch_result_index>
         <update handle="facebooklb_init_js"/>
         <reference name="content">
-            <block type="core/template" name="facebook_search_result_script">
+            <block type="core/template" name="facebooklb.catalogsearch">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/category_products_like.phtml</template>
+                    <template>tm/facebooklb/category_products_like.phtml</template>
                 </action>
             </block>
         </reference>
@@ -47,9 +47,9 @@
     <catalog_category_layered>
         <update handle="facebooklb_init_js"/>
         <reference name="before_body_end">
-            <block type="core/template" name="facebookcategory">
+            <block type="core/template" name="facebooklb.category.layered">
                 <action method="setTemplate" ifconfig="facebooklb/general/enabled">
-                    <template>facebooklb/category_products_like.phtml</template>
+                    <template>tm/facebooklb/category_products_like.phtml</template>
                 </action>
             </block>
         </reference>
