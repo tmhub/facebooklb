@@ -36,6 +36,8 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
             return '';
         }
         $config = $this->getConfig($configKey);
+        $renderer = $this->getLayout()->createBlock('core/template')->setTemplate('tm/facebooklb/renderer/custom.phtml');
+        return $renderer->toHtml();
         $html = '';
         if (isset($config['enabled']) && $config['enabled'] == 'true') {
             $dataAttr = '';
