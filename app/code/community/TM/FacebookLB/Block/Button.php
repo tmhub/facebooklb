@@ -1,6 +1,6 @@
 <?php
 
-class TM_FacebookLB_Block_Default extends Mage_Core_Block_Template
+class TM_FacebookLB_Block_Button extends Mage_Core_Block_Template
 {
     protected $_mapping = array(
         'send'      => 'data-share',
@@ -13,12 +13,15 @@ class TM_FacebookLB_Block_Default extends Mage_Core_Block_Template
 
     protected function _toHtml()
     {
-        if (!$this->getTemplate()) {
-            $this->setTemplate('tm/facebooklb/button/custom.phtml');
-        }
         $config = $this->getConfig();
         if (($config['enabled'] == 'false') || !$config['enabled']) {
             $this->setTemplate('');
+        } elseif (!$this->getTemplate()) {
+            if ($config['layout'] == 'custom') {
+                $this->setTemplate('tm/facebooklb/button/custom.phtml');
+            } else {
+                $this->setTemplate('tm/facebooklb/button/default.phtml');
+            }
         }
         return parent::_toHtml();
     }

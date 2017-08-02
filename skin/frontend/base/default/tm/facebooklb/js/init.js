@@ -1,12 +1,10 @@
 document.observe("dom:loaded", function() {
 
     function initObservers(){
-        $$('.fbl-custom-like').each(function(el){
+        $$('.fbl-custom .like').each(function(el){
+            if (el.hasClassName('initialized')) { return; }
             el.observe('click', function(e){
                 var button = e.target;
-                if (!button.hasClassName('fbl-custom-like')) {
-                    button = button.up('.fbl-custom-like');
-                }
                 // call fb dialog to like product
                 FB.ui({
                   method: 'share_open_graph',
@@ -30,18 +28,16 @@ document.observe("dom:loaded", function() {
         initObservers();
     }
 
-    // set callback on facebook SDK load
-    if (window.fbAsyncInit) {
-        window.fbAsyncInit = window.fbAsyncInit.wrap(function (callOriginal){
-            callOriginal();
-            facebookButtonsInit();
-        });
-    } else {
-        window.fbAsyncInit = facebookButtonsInit;
-    }
-
-    var id = 'facebook-jssdk';
     if (typeof FB === 'undefined') {
+        // set callback on facebook SDK load
+        if (window.fbAsyncInit) {
+            window.fbAsyncInit = window.fbAsyncInit.wrap(function (callOriginal){
+                callOriginal();
+                facebookButtonsInit();
+            });
+        } else {
+            window.fbAsyncInit = facebookButtonsInit;
+        }
         // load Facebook SDK
         var ogLocale = $$('meta[property="og:locale"]').first();
         var locale = ogLocale.hasAttribute('content')
@@ -49,7 +45,7 @@ document.observe("dom:loaded", function() {
         $$('script').first().insert({
             'before': new Element('script', {
                 'src': "//connect.facebook.net/"+locale+"/sdk.js",
-                'id': id
+                'id': 'facebook-jssdk'
                 })
             }
         );
@@ -62,7 +58,10 @@ document.observe("dom:loaded", function() {
     ["ajaxlayerednavigation:ready", "quickshopping:previewloaded",
      "AjaxPro:onSuccess:after", "AjaxPro:onComplete:after"].map(
         function(eventName){
-            document.observe(eventName, function(){FB.XFBML.parse()});
+            document.observe(eventName, function(){
+                FB.XFBML.parse();
+                initObservers();
+            });
         }
     );
 });

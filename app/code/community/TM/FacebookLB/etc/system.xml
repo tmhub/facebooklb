@@ -126,6 +126,11 @@
                                 <show_in_default>1</show_in_default>
                                 <show_in_website>1</show_in_website>
                                 <show_in_store>1</show_in_store>
+                                <depends>
+                                    <layout separator=",">
+                                        <value>standard,button,button_count,box_count</value>
+                                    </layout>
+                                </depends>
                             </verb>
                             <color translate="label comment">
                                 <label>Color scheme</label>
@@ -136,6 +141,11 @@
                                 <show_in_default>1</show_in_default>
                                 <show_in_website>1</show_in_website>
                                 <show_in_store>1</show_in_store>
+                                <depends>
+                                    <layout separator=",">
+                                        <value>standard,button,button_count,box_count</value>
+                                    </layout>
+                                </depends>
                             </color>
                         </fields>
                 </category_products>
@@ -204,6 +214,11 @@
                                 <show_in_default>1</show_in_default>
                                 <show_in_website>1</show_in_website>
                                 <show_in_store>1</show_in_store>
+                                <depends>
+                                    <layout separator=",">
+                                        <value>standard,button,button_count,box_count</value>
+                                    </layout>
+                                </depends>
                             </verb>
                             <color translate="label comment">
                                 <label>Color scheme</label>
@@ -214,6 +229,11 @@
                                 <show_in_default>1</show_in_default>
                                 <show_in_website>1</show_in_website>
                                 <show_in_store>1</show_in_store>
+                                <depends>
+                                    <layout separator=",">
+                                        <value>standard,button,button_count,box_count</value>
+                                    </layout>
+                                </depends>
                             </color>
                         </fields>
                 </productlike>

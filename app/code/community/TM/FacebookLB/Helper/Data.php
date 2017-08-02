@@ -5,19 +5,10 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
 
     protected $_config = array();
 
-    protected $_mapping = array(
-            'send'      => 'data-share',
-            'layout'    => 'data-layout',
-            'showfaces' => 'data-show-faces',
-            'width'     => 'data-width',
-            'verb'      => 'data-action',
-            'color'     => 'data-colorscheme'
-        );
-
     public function getCategoryLikeButton($product)
     {
         if (!Mage::getStoreConfig('facebooklb/category_products/enabled')) {
-            return;
+            return '';
         }
         $oldUrl = $product->getData('url');
         $oldRequestPath = $product->getData('request_path');
@@ -38,9 +29,8 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
         if (!Mage::getStoreConfig('facebooklb/general/enabled')) {
             return '';
         }
-        $config = $this->getConfig($configKey);
-        $button = $this->getLayout()
-            ->createBlock('facebooklb/default')
+        $button = Mage::app()->getLayout()
+            ->createBlock('facebooklb/button')
             ->setLikeUrl($url)
             ->setConfigKey($configKey);
         return $button->toHtml();
