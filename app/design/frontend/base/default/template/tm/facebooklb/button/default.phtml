@@ -1,0 +1,10 @@
+<?php
+    $config = $this->getConfig();
+?>
+<div class="fb-like" data-href="<?php echo $this->getLikeUrl(); ?>"<?php
+foreach ($this->getMapping() as $key => $attName) {
+    if (isset($config[$key])) {
+        echo sprintf(' %s="%s"', $attName, $config[$key]);
+    }
+}
+?>></div>

@@ -70,9 +70,9 @@
             </FacebookLB_read>
         </resources>
         <blocks>
-            <FacebookLB>
+            <facebooklb>
                 <class>TM_FacebookLB_Block</class>
-            </FacebookLB>
+            </facebooklb>
         </blocks>
         <helpers>
             <facebooklb>

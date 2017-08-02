@@ -16,6 +16,9 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getCategoryLikeButton($product)
     {
+        if (!Mage::getStoreConfig('facebooklb/category_products/enabled')) {
+            return;
+        }
         $oldUrl = $product->getData('url');
         $oldRequestPath = $product->getData('request_path');
         $product->setData('url', '');
@@ -36,20 +39,11 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
             return '';
         }
         $config = $this->getConfig($configKey);
-        $renderer = $this->getLayout()->createBlock('core/template')->setTemplate('tm/facebooklb/renderer/custom.phtml');
-        return $renderer->toHtml();
-        $html = '';
-        if (isset($config['enabled']) && $config['enabled'] == 'true') {
-            $dataAttr = '';
-            foreach ($this->_mapping as $key => $value) {
-                if (!isset($config[$key])) {
-                    continue;
-                }
-                $dataAttr .= sprintf(' %s="%s"', $value, $config[$key]);
-            }
-            $html = '<div class="fb-like" data-href="' . $url . '"'. $dataAttr .'></div>';
-        }
-        return $html;
+        $button = $this->getLayout()
+            ->createBlock('facebooklb/default')
+            ->setLikeUrl($url)
+            ->setConfigKey($configKey);
+        return $button->toHtml();
     }
 
     public function getConfig($parentConfigKey)

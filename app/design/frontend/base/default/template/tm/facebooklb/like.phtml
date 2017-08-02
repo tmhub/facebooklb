@@ -2,8 +2,5 @@
     $product = Mage::registry('current_product');
     $buttonHtml = $this->helper('facebooklb')
         ->renderLikeButton($product->getProductUrl(), 'productlike');
+    echo $buttonHtml;
 ?>
-<?php if ($buttonHtml) : ?>
-    <div id="fb-root" data-locale="<?php echo Mage::getStoreConfig('facebooklb/general/lang')?>" style="clear: both;"></div>
-    <?php echo $buttonHtml;?>
-<?php endif; ?>

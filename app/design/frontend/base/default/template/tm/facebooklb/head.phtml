@@ -5,4 +5,5 @@
 <?php if ($product): ?>
 <meta property="og:title" content="<?php echo htmlspecialchars(trim($product->getName())); ?>"/>
 <meta property="og:image" content="<?php echo Mage::helper('catalog/image')->init($product, 'small_image')->resize(200,200);?>"/>
+<meta property="og:locale" content="<?php echo Mage::getStoreConfig('facebooklb/general/lang');?>"/>
 <?php endif; ?>
