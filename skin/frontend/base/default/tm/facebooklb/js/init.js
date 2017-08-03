@@ -4,13 +4,13 @@ document.observe("dom:loaded", function() {
         $$('.fbl-custom .like').each(function(el){
             if (el.hasClassName('initialized')) { return; }
             el.observe('click', function(e){
-                var button = e.target;
+                // variable 'this' - element with the observer
                 // call fb dialog to like product
                 FB.ui({
                   method: 'share_open_graph',
                   action_type: 'og.likes',
                   action_properties: JSON.stringify({
-                    object: button.getAttribute('data-url'),
+                    object: this.getAttribute('data-url'),
                   })
                 }, function(response){});
             });
