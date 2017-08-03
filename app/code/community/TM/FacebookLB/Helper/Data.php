@@ -7,21 +7,24 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getCategoryLikeButton($product)
     {
-        if (!Mage::getStoreConfig('facebooklb/category_products/enabled')) {
-            return '';
+        $html = '';
+
+        if ($this->isCategoryButtonAvailable()) {
+            $oldUrl = $product->getData('url');
+            $oldRequestPath = $product->getData('request_path');
+            $product->setData('url', '');
+            $product->setData('request_path', '');
+
+            $params = array('_ignore_category' => true);
+            $url = $product->getUrlModel()->getUrl($product, $params);
+
+            $product->setData('url', $oldUrl);
+            $product->setData('request_path', $oldRequestPath);
+
+            $html = $this->renderLikeButton($url, 'category_products');
         }
-        $oldUrl = $product->getData('url');
-        $oldRequestPath = $product->getData('request_path');
-        $product->setData('url', '');
-        $product->setData('request_path', '');
 
-        $params = array('_ignore_category' => true);
-        $url = $product->getUrlModel()->getUrl($product, $params);
-
-        $product->setData('url', $oldUrl);
-        $product->setData('request_path', $oldRequestPath);
-
-        return $this->renderLikeButton($url, 'category_products');
+        return $html;
     }
 
     public function renderLikeButton($url, $configKey)
@@ -58,5 +61,23 @@ class TM_FacebookLB_Helper_Data extends Mage_Core_Helper_Abstract
             $this->_config[$parentConfigKey] = $config;
         }
         return $this->_config[$parentConfigKey];
+    }
+
+    public function getHandles()
+    {
+        return Mage::app()->getLayout()->getUpdate()->getHandles();
+    }
+
+    public function isCategoryButtonAvailable()
+    {
+        if (Mage::getStoreConfig('facebooklb/general/enabled')) {
+            $allowed = array(
+                'catalog_category_default',
+                'catalog_category_layered',
+                'catalogsearch_result_index'
+            );
+            return !empty(array_intersect($allowed, $this->getHandles()));
+        }
+        return false;
     }
 }
