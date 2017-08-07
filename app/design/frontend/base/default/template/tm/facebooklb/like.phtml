@@ -1,6 +1,8 @@
 <?php
-    $product = Mage::registry('current_product');
-    $buttonHtml = $this->helper('facebooklb')
-        ->renderLikeButton($product->getProductUrl(), 'productlike');
-    echo $buttonHtml;
+    if (Mage::helper('core')->isModuleOutputEnabled('TM_FacebookLB')) :
+        $product = Mage::registry('current_product');
+        $buttonHtml = $this->helper('facebooklb')
+            ->renderLikeButton($product->getProductUrl(), 'productlike');
+        echo $buttonHtml;
+   endif;
 ?>
