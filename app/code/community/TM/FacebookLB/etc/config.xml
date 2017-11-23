@@ -113,6 +113,8 @@
                 <verb>like</verb>
                 <font></font>
                 <color>light</color>
+                <image_width>200</image_width>
+                <image_height>200</image_height>
             </productlike>
         </facebooklb>
     </default>
