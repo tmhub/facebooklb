@@ -115,6 +115,7 @@
                 <color>light</color>
                 <image_width>200</image_width>
                 <image_height>200</image_height>
+                <image_keep_frame>1</image_keep_frame>
             </productlike>
         </facebooklb>
     </default>

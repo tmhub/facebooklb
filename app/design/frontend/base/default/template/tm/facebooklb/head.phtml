@@ -4,7 +4,8 @@
 <?php if ($product):
     $w = Mage::getStoreConfig('facebooklb/productlike/image_width');
     $h = Mage::getStoreConfig('facebooklb/productlike/image_width');
-    $src = Mage::helper('catalog/image')->init($product, 'image');
+    $keep_frame = Mage::getStoreConfig('facebooklb/productlike/image_keep_frame');
+    $src = Mage::helper('catalog/image')->init($product, 'image')->keepFrame($keep_frame);
     if ($w && $h) {
         $src->resize($w, $h);
     }
